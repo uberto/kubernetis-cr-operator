@@ -1,0 +1,8 @@
+apiVersion: demo.ubertob.com/v1
+kind: MyCustomResource
+metadata:
+  name: example-mycustomresource
+spec:
+  replicas: 5
+  containerName: nginx
+  containerImage: "nginxdemos/hello"

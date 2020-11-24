@@ -1,0 +1,33 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version  "${kotlin_version}"
+}
+
+group 'com.ubertob'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+wrapper {
+    gradleVersion = "6.7"
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'io.fabric8:kubernetes-client:4.12.0'
+
+    testImplementation 'io.strikt:strikt-core:0.26.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+}
+
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+}
